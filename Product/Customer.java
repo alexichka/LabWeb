@@ -3,11 +3,10 @@ import Product.DeliveryPoint;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class Customer {
 
-    private UUID id;
+    private int id;
     private String name;
     private String login;
     private String password;
@@ -17,7 +16,7 @@ public class Customer {
     }
 
     public Customer(int id, @NotNull String name, @NotNull String login, @NotNull String password) {
-        this.id = UUID.randomUUID();
+        this.id = id();
         this.name = name;
         this.login = login;
         this.password = password;
@@ -30,7 +29,7 @@ public class Customer {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId() {
         this.id = id;
     }
 
