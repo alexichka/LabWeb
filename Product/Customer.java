@@ -13,9 +13,10 @@ public class Customer {
     private List<DeliveryPoint> orders;
 
     public Customer() {
+        orders = new ArrayList<>();
     }
 
-    public Customer(int id, @NotNull String name, @NotNull String login, @NotNull String password) {
+    public Customer(int id, @NotNull String name, @NotNull String login, @NotNull String password) throws IncorrectConstructorParameters {
         this.id = id();
         this.name = name;
         this.login = login;
@@ -29,8 +30,10 @@ public class Customer {
         return id;
     }
 
-    public void setId() {
-        this.id = id;
+    public void setId(int id) throws IncorrectConstructorParameters {
+        if (id >= 0)
+            this.id = id;
+         else throw new IncorrectConstructorParameters("Incorrect id ");
     }
 
     public String getName() {
