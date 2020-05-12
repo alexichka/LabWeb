@@ -26,7 +26,7 @@ public class Customer {
 
     // -----------SETTERS AND GETTERS------------
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
